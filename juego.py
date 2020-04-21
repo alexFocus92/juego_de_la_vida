@@ -57,18 +57,19 @@ while running:
             if not pauseRun:
 
                 # Numero de vecinos
-                nNeigh = newStatus[(x-1)%nX,(y-1)%nY] + newStatus[(x)%nX,(y-1)%nY] + \
-                        newStatus[(x+1)%nX,(y-1)%nY] + newStatus[(x-1)%nX,(y)%nY] + \
-                        newStatus[(x+1)%nX,(y)%nY] + newStatus[(x-1)%nX,(y+1)%nY] + \
-                         newStatus[(x)%nX,(y+1)%nY] + newStatus[(x+1)%nX,(y+1)%nY]
+                nNeigh = status[(x-1)%nX,(y-1)%nY] + status[(x)%nX,(y-1)%nY] + \
+                        status[(x+1)%nX,(y-1)%nY] + status[(x-1)%nX,(y)%nY] + \
+                        status[(x+1)%nX,(y)%nY] + status[(x-1)%nX,(y+1)%nY] + \
+                         status[(x)%nX,(y+1)%nY] + status[(x+1)%nX,(y+1)%nY]
 
                 # Rule 1: Una celula muerta con 3 vecinas revive
-                if newStatus[x,y] == 0 and nNeigh==3:
+                if status[x,y] == 0 and nNeigh==3:
                     newStatus[x,y] = 1
 
                 # Rule 2: Una celula viva con mas de 3 vecinos o menos de 2 muere
-                elif newStatus[x,y] == 1 and (nNeigh < 2 or nNeigh > 3):
+                elif status[x,y] == 1 and (nNeigh < 2 or nNeigh > 3):
                     newStatus[x,y] = 0
+
 
             poly = [(x*xSize,y*ySize),
                     ((x+1)*xSize,y*ySize),
