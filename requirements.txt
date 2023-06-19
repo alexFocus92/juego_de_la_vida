@@ -1,2 +1,2 @@
 pygame==1.9.6
-numpy 1.18.3
+numpy==1.25.0
