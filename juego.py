@@ -8,9 +8,8 @@ Created on Mon Apr 20 22:22:11 2020
 
 
 
-import pygame
+import pygame, time
 import numpy as np
-import time
 
 WIDTH, HEIGHT = 800, 800
 nX, nY = 80, 80
